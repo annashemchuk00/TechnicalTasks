@@ -1,3 +1,7 @@
 <Solution>
-  <Project Path="TechnicalTasks/TechnicalTasks.csproj" />
+  <Project Path="Infrastructure/TechnicalTasks.Infrastructure.csproj" />
+  <Project Path="TechnicalTasks.Application/TechnicalTasks.Application.csproj" />
+  <Project Path="TechnicalTasks.Domain/TechnicalTasks.Domain.csproj" />
+  <Project Path="TechnicalTasks.Shared/TechnicalTasks.Shared.csproj" />
+  <Project Path="TechnicalTasks/TechnicalTasks.Api.csproj" />
 </Solution>

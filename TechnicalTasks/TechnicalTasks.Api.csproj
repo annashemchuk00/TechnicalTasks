@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Attributes\" />
+    <Folder Include="Components\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Enrichers\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Middleware\" />
+    <Folder Include="Transformers\" />
+    <Folder Include="Providers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\TechnicalTasks.Infrastructure.csproj" />
+    <ProjectReference Include="..\TechnicalTasks.Application\TechnicalTasks.Application.csproj" />
+    <ProjectReference Include="..\TechnicalTasks.Domain\TechnicalTasks.Domain.csproj" />
+    <ProjectReference Include="..\TechnicalTasks.Shared\TechnicalTasks.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

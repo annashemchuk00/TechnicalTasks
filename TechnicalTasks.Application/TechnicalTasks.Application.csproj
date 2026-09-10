@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Documents\" />
+    <Folder Include="Managers\" />
+    <Folder Include="MappingProfiles\" />
+    <Folder Include="Validators\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Populators\" />
+    <Folder Include="Readers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\TechnicalTasks.Infrastructure.csproj" />
+    <ProjectReference Include="..\TechnicalTasks.Domain\TechnicalTasks.Domain.csproj" />
+    <ProjectReference Include="..\TechnicalTasks.Shared\TechnicalTasks.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
