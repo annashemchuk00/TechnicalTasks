@@ -36,6 +36,9 @@ namespace TechnicalTask.Infrastructure.DbContexts
             modelBuilder.Entity<ConferenceRoom>()
                 .HasMany(r => r.Services)
                 .WithMany(s => s.ConferenceRooms);
+
+            base.OnModelCreating(modelBuilder);
+            TechnicalTasks.Infrastructure.SeedData.Data.Seed(modelBuilder);
         }
     }
 }
