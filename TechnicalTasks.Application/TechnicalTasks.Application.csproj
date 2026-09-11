@@ -8,12 +8,14 @@
 
   <ItemGroup>
     <Folder Include="Documents\" />
-    <Folder Include="Managers\" />
-    <Folder Include="MappingProfiles\" />
     <Folder Include="Validators\" />
     <Folder Include="Resources\" />
     <Folder Include="Populators\" />
     <Folder Include="Readers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
   </ItemGroup>
 
   <ItemGroup>
