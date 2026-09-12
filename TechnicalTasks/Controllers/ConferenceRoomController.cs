@@ -40,5 +40,12 @@ namespace TechnicalTasks.Api.Controllers
             
             return Ok(result);
         }
+
+        [HttpGet("available/conference/room")]
+        public async Task<IActionResult> GetAvailableConferenceRoom([FromQuery] DateTime startDateTime, [FromQuery] DateTime endDataDateTime,
+            [FromQuery] int capacity)
+        {
+            return Ok(await _conferenceRoomManager.GetAvailableConferenceRoom(startDateTime, endDataDateTime, capacity));
+        }
     }
 }

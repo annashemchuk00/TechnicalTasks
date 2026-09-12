@@ -6,7 +6,8 @@ using TechnicalTasks.Domain.Interfaces;
 using TechnicalTasks.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//дозвіл на автоматичну обробку локального часу
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Add services to the container.
 
 builder.Services.AddControllers();

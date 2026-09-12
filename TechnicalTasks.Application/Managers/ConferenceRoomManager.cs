@@ -34,6 +34,18 @@ namespace TechnicalTasks.Application.Managers
             return _conferenceRoomRepository.DeleteConferenceRoom(id);
         }
 
+        public async Task<List<ConferenceRoomDTO>> GetAvailableConferenceRoom(DateTime startDateTime, DateTime endDataDateTime, int capacity)
+        {
+            //перевірка вхідних даних
+            if(startDateTime >= endDataDateTime || startDateTime < DateTime.Now || capacity <= 0)
+            {
+                throw new ArgumentException("Некоректні дані");
+            } 
+            
+            var entity = await _conferenceRoomRepository.GetAvailableConferenceRoom(startDateTime, endDataDateTime, capacity);
+            return _mapper.Map<List<ConferenceRoomDTO>>(entity);
+        }
+
         public async Task<ConferenceRoomDTO> GetConferenceRoomById(Guid id)
         {
             var conferenceRoom = await _conferenceRoomRepository.GetConferenceRoomById(id);

@@ -56,5 +56,13 @@ namespace TechnicalTasks.Infrastructure.Repositories
             var saved = await _context.SaveChangesAsync();
             return saved > 0 ? true : false;
         }
+
+        public async Task<List<ConferenceRoom>> GetAvailableConferenceRoom(DateTime startDateTime, DateTime endDataDateTime, int capacity)
+        {
+            //витягую зали, де місткість >= необхідній + де немає жодного блонювання
+            return await _context.ConferenceRooms.Include(r => r.Bookings)
+                .Where(r => r.Capacity >= capacity && !r.Bookings.Any(b => b.StartDateTime < endDataDateTime 
+                                                                           && endDataDateTime > startDateTime)).ToListAsync();
+        }
     }
 }
