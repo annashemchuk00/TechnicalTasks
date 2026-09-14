@@ -10,7 +10,6 @@ namespace TechnicalTask.Infrastructure.DbContexts
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
-
         }
 
         public DbSet<ConferenceRoom> ConferenceRooms { get; set; }

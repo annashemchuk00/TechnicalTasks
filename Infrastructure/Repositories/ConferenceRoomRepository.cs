@@ -42,6 +42,7 @@ namespace TechnicalTasks.Infrastructure.Repositories
         public async Task<ConferenceRoom> GetConferenceRoomById(Guid id)
         {
             return await _context.ConferenceRooms.Include(r => r.Services)
+                .Include(r => r.Bookings)
                 .FirstOrDefaultAsync(r => r.Id == id);
         }
 

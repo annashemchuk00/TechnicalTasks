@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TechnicalTasks.Domain.Models
+﻿namespace TechnicalTasks.Domain.Models
 {
     public class CreateConferenceRoomModel
     {
@@ -12,6 +8,6 @@ namespace TechnicalTasks.Domain.Models
 
         public decimal BasePricePerHour { get; set; }
 
-        public List<CreateServiceModel> Services { get; set; } = new();
+        public List<Guid> ServicesIds { get; set; }
     }
 }

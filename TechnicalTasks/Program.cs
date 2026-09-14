@@ -27,6 +27,10 @@ builder.Services.AddAutoMapper(cfg =>
 
 builder.Services.AddScoped<IConferenceRoomRepository, ConferenceRoomRepository>();
 builder.Services.AddScoped<IConferenceRoomManager, ConferenceRoomManager>();
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<IBookingManager, BookingManager>();
+builder.Services.AddScoped<IServicesRepository, ServicesRepository>();
+builder.Services.AddScoped<IServicesManager, ServicesManager>();
 
 var app = builder.Build();
 

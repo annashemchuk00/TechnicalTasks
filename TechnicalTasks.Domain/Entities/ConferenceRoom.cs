@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TechnicalTasks.Domain.Entities
+﻿namespace TechnicalTasks.Domain.Entities
 {
     public class ConferenceRoom
     {

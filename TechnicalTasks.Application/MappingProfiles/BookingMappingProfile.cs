@@ -8,15 +8,14 @@ using TechnicalTasks.Shared.DTO;
 
 namespace TechnicalTasks.Application.MappingProfiles
 {
-    public class ConferenceRoomMappingProfile : Profile
+    public class BookingMappingProfile : Profile
     {
-        public ConferenceRoomMappingProfile()
+        public BookingMappingProfile()
         {
+            CreateMap<BookingDTO, Booking>().ReverseMap();
+            CreateMap<CreateBookingModel, Booking>();
             CreateMap<Service, ServiceDTO>();
             CreateMap<CreateServiceModel, Service>();
-            CreateMap<CreateConferenceRoomModel, ConferenceRoom>();
-            CreateMap<ConferenceRoom, ConferenceRoomDTO>();
-            CreateMap<UpdateConferenceRoomModel, ConferenceRoom>();
         }
     }
 }

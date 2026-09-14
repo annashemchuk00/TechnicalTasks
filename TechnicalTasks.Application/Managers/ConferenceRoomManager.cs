@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
+﻿using AutoMapper;
 using TechnicalTasks.Domain.Entities;
 using TechnicalTasks.Domain.Interfaces;
 using TechnicalTasks.Domain.Models;
@@ -13,17 +10,20 @@ namespace TechnicalTasks.Application.Managers
     {
         private readonly IConferenceRoomRepository _conferenceRoomRepository;
         private readonly IMapper _mapper;
+        private readonly IServicesRepository _servicesRepository;
 
-        public ConferenceRoomManager(IConferenceRoomRepository repository, IMapper mapper)
+        public ConferenceRoomManager(IConferenceRoomRepository repository, IMapper mapper, IServicesRepository servicesRepository)
         {
             _conferenceRoomRepository = repository;
             _mapper = mapper;
+            _servicesRepository = servicesRepository;
         }
-
 
         public async Task<ConferenceRoomDTO> CreateConferenceRoom(CreateConferenceRoomModel model)
         {
             var conferenceRoomToAdd = _mapper.Map<ConferenceRoom>(model);
+            var services = await _servicesRepository.GetAllServices();
+            conferenceRoomToAdd.Services = services;
             var createdEntity = await _conferenceRoomRepository.CreateConferenceRoom(conferenceRoomToAdd);
             var dto = _mapper.Map<ConferenceRoomDTO>(createdEntity);
             return dto;
@@ -39,7 +39,7 @@ namespace TechnicalTasks.Application.Managers
             //перевірка вхідних даних
             if(startDateTime >= endDataDateTime || startDateTime < DateTime.Now || capacity <= 0)
             {
-                throw new ArgumentException("Некоректні дані");
+                throw new InvalidDataException();
             } 
             
             var entity = await _conferenceRoomRepository.GetAvailableConferenceRoom(startDateTime, endDataDateTime, capacity);

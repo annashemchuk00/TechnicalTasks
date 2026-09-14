@@ -10,7 +10,6 @@ namespace TechnicalTasks.Domain.Entities
 
         public Guid RoomId { get; set; }
 
-
         public ConferenceRoom ConferenceRoom { get; set; }
 
         public DateTime StartDateTime { get; set; }

@@ -17,6 +17,7 @@ namespace TechnicalTasks.Domain.Interfaces
 
         Task<bool> UpdateConferenceRoom(Guid id, UpdateConferenceRoomModel model);
 
-        Task<List<ConferenceRoomDTO>> GetAvailableConferenceRoom(DateTime startDateTime, DateTime endDataDateTime, int capacity);
+        Task<List<ConferenceRoomDTO>> GetAvailableConferenceRoom(DateTime startDateTime, DateTime endDataDateTime,
+            int capacity);
     }
 }

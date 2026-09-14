@@ -11,7 +11,7 @@ namespace TechnicalTasks.Shared.DTO
         public Guid RoomId { get; set; }
 
 
-        private ICollection<ConferenceRoomDTO> CongerenceRooms = new List<ConferenceRoomDTO>();
+        private ICollection<ConferenceRoomDTO> ConferenceRooms = new List<ConferenceRoomDTO>();
 
         public DateTime StartDateTime { get; set; }
 
